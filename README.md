@@ -9,7 +9,8 @@ Buka: `https://[username-github-kamu].github.io/laila-birthday/`
 
 ## ✨ Fitur Website
 
-- 🔐 **Password Protection** — harus masukkan kode `101222` dulu
+- 🔐 **Password Protection** — harus masukkan kode
+  ` dulu
 - 🎊 **Confetti Explosion** — otomatis saat masuk halaman
 - ✍️ **Typing Animation** — nama Laila diketik perlahan
 - 🎈 **Balloon Interactive** — klik balon buat efek pop!
