@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Laila 🎂</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800;900&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ==================== PASSWORD SCREEN ==================== -->
+<div id="password-screen" class="screen active">
+  <div class="stars-bg"></div>
+  <canvas id="particles-canvas"></canvas>
+
+  <div class="lock-container">
+    <div class="lock-emoji bounce-anim">🔐</div>
+    <h1 class="lock-title">Psst… Ada Rahasia di Sini!</h1>
+    <p class="lock-subtitle">Masukkan kode spesial untuk membuka kejutan 🎁</p>
+
+    <div class="password-input-wrap">
+      <input
+        type="password"
+        id="pw-input"
+        maxlength="6"
+        placeholder="••••••"
+        autocomplete="off"
+        class="pw-input"
+        inputmode="numeric"
+      />
+      <button id="pw-btn" class="pw-btn" onclick="checkPassword()">
+        <span>Buka Kejutan</span>
+        <span class="btn-icon">✨</span>
+      </button>
+    </div>
+
+    <p id="pw-error" class="pw-error"></p>
+
+    <div class="hint-text">💡 Hint: tanggal yang selalu kamu ingat 😉</div>
+
+    <!-- Floating hearts decoration -->
+    <div class="deco-hearts">
+      <span class="dh" style="--d:0s;--x:10%;--s:1.2">💖</span>
+      <span class="dh" style="--d:0.5s;--x:80%;--s:0.8">💕</span>
+      <span class="dh" style="--d:1s;--x:30%;--s:1.0">🌸</span>
+      <span class="dh" style="--d:1.5s;--x:60%;--s:1.4">💗</span>
+      <span class="dh" style="--d:2s;--x:50%;--s:0.9">⭐</span>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== BIRTHDAY SCREEN ==================== -->
+<div id="birthday-screen" class="screen">
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Floating Background Elements -->
+  <div id="floating-elements"></div>
+
+  <!-- SECTION 1: HERO -->
+  <section class="section hero-section" id="sec-hero">
+    <div class="hero-content">
+      <div class="cake-wrapper">
+        <div class="cake-animation" id="cake-anim">
+          <div class="cake-emoji">🎂</div>
+          <div class="sparkle-ring">
+            <span class="sp" style="--i:0">✨</span>
+            <span class="sp" style="--i:1">⭐</span>
+            <span class="sp" style="--i:2">🌟</span>
+            <span class="sp" style="--i:3">✨</span>
+            <span class="sp" style="--i:4">⭐</span>
+            <span class="sp" style="--i:5">🌟</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-reveal">
+        <p class="hero-label">🎉 Selamat Ulang Tahun 🎉</p>
+        <h1 class="hero-name" id="typing-name"></h1>
+        <p class="hero-tagline">Semoga hari ini seindah senyummu 🌸</p>
+      </div>
+
+      <div class="balloon-row">
+        <div class="balloon b1">🎈</div>
+        <div class="balloon b2">🎀</div>
+        <div class="balloon b3">🎈</div>
+        <div class="balloon b4">💝</div>
+        <div class="balloon b5">🎈</div>
+      </div>
+
+      <button class="scroll-btn" onclick="scrollTo('#sec-message')">
+        Lihat Pesan Untukmu ↓
+      </button>
+    </div>
+  </section>
+
+  <!-- SECTION 2: MESSAGE -->
+  <section class="section message-section" id="sec-message">
+    <div class="section-inner">
+      <h2 class="section-title">💌 Pesan dari Hati</h2>
+      <div class="letter-card" id="letter-card">
+        <div class="letter-header">
+          <span>Untuk: <strong>Laila Indah Anggraini</strong> ✨</span>
+        </div>
+        <div class="letter-body" id="letter-text">
+          <p>Heyy Lailaa,</p>
+          <p>Selamat ulang tahun, sayang! 🎂</p>
+          <p>Di hari yang spesial ini, aku mau bilang betapa beruntungnya aku bisa punya kamu di hidupku. Setiap hari bersamamu selalu terasa lebih berwarna, lebih hangat, dan lebih berarti.</p>
+          <p>Senyummu itu beneran bikin hari-hariku jadi lebih cerah ☀️. Ketawamu itu contagious banget sampai aku nggak bisa nggak ikut bahagia. Dan caramu yang selalu ada buat aku — itu nggak akan pernah aku lupa.</p>
+          <p>Semoga di usiamu yang baru ini, kamu semakin bahagia, semakin sehat, semakin cantik (kalau itu mungkin 😄), dan semua impian-impianmu jadi kenyataan.</p>
+          <p>Aku sayang banget sama kamu, Laila. Happy birthday! 🌸💕</p>
+          <p class="letter-sign">— Dengan sepenuh hati, dari aku yang suka kamu 🥰</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: INTERACTIVE GAMES -->
+  <section class="section games-section" id="sec-games">
+    <div class="section-inner">
+      <h2 class="section-title">🎮 Tiup Lilin Yuk!</h2>
+      <p class="section-sub">Klik lilin untuk meniup satu per satu 🕯️</p>
+
+      <div class="candle-cake">
+        <div class="cake-body">
+          <div class="cake-top"></div>
+          <div class="cake-middle"></div>
+          <div class="cake-base"></div>
+        </div>
+        <div class="candles-row" id="candles-row">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+
+      <p id="candle-msg" class="candle-msg"></p>
+      <button id="reset-candles" class="mini-btn hidden" onclick="resetCandles()">🕯️ Nyalain Lagi</button>
+    </div>
+  </section>
+
+  <!-- SECTION 4: WISH PICKER -->
+  <section class="section wish-section" id="sec-wish">
+    <div class="section-inner">
+      <h2 class="section-title">🌠 Buat Permintaan!</h2>
+      <p class="section-sub">Pilih bintangmu dan dapatkan harapan spesial</p>
+
+      <div class="stars-grid" id="stars-grid">
+        <!-- 9 stars -->
+      </div>
+
+      <div class="wish-box" id="wish-box">
+        <div class="wish-emoji" id="wish-emoji">⭐</div>
+        <p class="wish-text" id="wish-text">Pilih bintangmu...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: PHOTO GALLERY PLACEHOLDER -->
+  <section class="section gallery-section" id="sec-gallery">
+    <div class="section-inner">
+      <h2 class="section-title">📸 Kenangan Kita</h2>
+      <p class="section-sub">Setiap momen bersama kamu selalu terasa seperti foto terindah 💕</p>
+      <div class="memory-cards" id="memory-cards">
+        <!-- Generated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: FINAL -->
+  <section class="section final-section" id="sec-final">
+    <div class="section-inner final-inner">
+      <div class="final-emoji">🎊</div>
+      <h2 class="final-title">Happy Birthday!</h2>
+      <p class="final-name">Laila Indah Anggraini</p>
+      <p class="final-sub">Semoga panjang umur, sehat selalu, dan terus bahagia 🥰</p>
+
+      <div class="firework-btn-wrap">
+        <button class="firework-btn" onclick="launchFireworks()">
+          🎆 Klik untuk Kembang Api!
+        </button>
+      </div>
+
+      <div class="heart-rain" id="heart-rain"></div>
+
+      <div class="final-hearts">
+        <span class="fh fh1">💖</span>
+        <span class="fh fh2">💕</span>
+        <span class="fh fh3">🌸</span>
+        <span class="fh fh4">💗</span>
+        <span class="fh fh5">💝</span>
+        <span class="fh fh6">🌟</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSIC TOGGLE -->
+  <button class="music-btn" id="music-btn" onclick="toggleMusic()" title="Toggle Music">
+    🎵
+  </button>
+
+  <!-- AUDIO (Background music - simple beep pattern) -->
+  <audio id="bg-music" loop>
+    <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<!-- ==================== TRANSITION OVERLAY ==================== -->
+<div id="transition-overlay" class="transition-overlay"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
